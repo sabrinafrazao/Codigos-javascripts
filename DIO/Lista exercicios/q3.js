@@ -9,22 +9,27 @@ Código Condição de pagamento:
 - Acima de duas vezes, preço normal de etiqueta mais juros de 10%;
  */
 
+function aplicarDesconto(valor, desconto){
+    return (valor - (valor * (desconto/100)))
+}
+
+function aplicarJuros(valor, juros){
+    valor + (valor * (juros/100) );
+}
+
 
 let precoNormal = 80;
 let formaPagamento = 1
 
 
 if(formaPagamento === 1){
-    let valor = precoNormal - (precoNormal * 0.1);
-     console.log(valor);
+     console.log(aplicarDesconto(precoNormal, 10));
 
 } else if(formaPagamento === 2 ){
-    let valor = precoNormal - (precoNormal * 0.15);
-     console.log(valor);
+     console.log(aplicarDesconto(precoNormal, 15));
 
 } else if (formaPagamento === 3) {
     console.log(precoNormal)
 } else {
-    let valor = precoNormal + (precoNormal * 0.1);
-    console.log(valor);
+    console.log(aplicarJuros(precoNormal, 10));
 }
